@@ -1,0 +1,78 @@
+package com.robotkinematicslab.mobile.diagnostics.benchmark
+
+/**
+ * Stable public surface for the diagnostic benchmark module.
+ *
+ * Implementation types live in responsibility-based subpackages. These aliases preserve the
+ * original imports used by the app, tests, and any research tooling while keeping the source tree
+ * easy to navigate.
+ */
+typealias DiagnosticAutoBenchmarkPreset = com.robotkinematicslab.mobile.diagnostics.benchmark.config.DiagnosticAutoBenchmarkPreset
+typealias DiagnosticBenchmarkConfig = com.robotkinematicslab.mobile.diagnostics.benchmark.config.DiagnosticBenchmarkConfig
+typealias DiagnosticJointMode = com.robotkinematicslab.mobile.diagnostics.benchmark.config.DiagnosticJointMode
+typealias DiagnosticPerformanceConfig = com.robotkinematicslab.mobile.diagnostics.benchmark.config.DiagnosticPerformanceConfig
+typealias DiagnosticSamplingConfig = com.robotkinematicslab.mobile.diagnostics.benchmark.config.DiagnosticSamplingConfig
+typealias DiagnosticSeedConfig = com.robotkinematicslab.mobile.diagnostics.benchmark.config.DiagnosticSeedConfig
+typealias DiagnosticSolverConfig = com.robotkinematicslab.mobile.diagnostics.benchmark.config.DiagnosticSolverConfig
+typealias DiagnosticTopologyConfig = com.robotkinematicslab.mobile.diagnostics.benchmark.config.DiagnosticTopologyConfig
+
+typealias DiagnosticBenchmarkPlan = com.robotkinematicslab.mobile.diagnostics.benchmark.planning.DiagnosticBenchmarkPlan
+typealias DiagnosticBenchmarkPlanner = com.robotkinematicslab.mobile.diagnostics.benchmark.planning.DiagnosticBenchmarkPlanner
+typealias Layer1DiagnosticExperiment = com.robotkinematicslab.mobile.diagnostics.benchmark.execution.Layer1DiagnosticExperiment
+
+typealias DiagnosticRobotFactory = com.robotkinematicslab.mobile.diagnostics.benchmark.generation.DiagnosticRobotFactory
+typealias DiagnosticTargetCase = com.robotkinematicslab.mobile.diagnostics.benchmark.generation.DiagnosticTargetCase
+typealias DiagnosticTargetFactory = com.robotkinematicslab.mobile.diagnostics.benchmark.generation.DiagnosticTargetFactory
+
+typealias DiagnosticAllocationHotspot = com.robotkinematicslab.mobile.diagnostics.benchmark.runtime.DiagnosticAllocationHotspot
+typealias DiagnosticAllocationTracker = com.robotkinematicslab.mobile.diagnostics.benchmark.runtime.DiagnosticAllocationTracker
+typealias DiagnosticCpuFrequencySnapshot = com.robotkinematicslab.mobile.diagnostics.benchmark.runtime.DiagnosticCpuFrequencySnapshot
+typealias DiagnosticPerformanceSample = com.robotkinematicslab.mobile.diagnostics.benchmark.runtime.DiagnosticPerformanceSample
+typealias DiagnosticProgressPhase = com.robotkinematicslab.mobile.diagnostics.benchmark.runtime.DiagnosticProgressPhase
+typealias DiagnosticProgressReporter = com.robotkinematicslab.mobile.diagnostics.benchmark.runtime.DiagnosticProgressReporter
+typealias DiagnosticProgressState = com.robotkinematicslab.mobile.diagnostics.benchmark.runtime.DiagnosticProgressState
+typealias DiagnosticSystemTelemetry = com.robotkinematicslab.mobile.diagnostics.benchmark.runtime.DiagnosticSystemTelemetry
+typealias DiagnosticSystemTelemetrySampler = com.robotkinematicslab.mobile.diagnostics.benchmark.runtime.DiagnosticSystemTelemetrySampler
+typealias DiagnosticThermalZoneSnapshot = com.robotkinematicslab.mobile.diagnostics.benchmark.runtime.DiagnosticThermalZoneSnapshot
+
+typealias DiagnosticDerivedMetrics = com.robotkinematicslab.mobile.diagnostics.metrics.DiagnosticDerivedMetrics
+typealias DiagnosticDerivedMetricsCalculator = com.robotkinematicslab.mobile.diagnostics.metrics.DiagnosticDerivedMetricsCalculator
+typealias DiagnosticMetricPolicy = com.robotkinematicslab.mobile.diagnostics.metrics.DiagnosticMetricPolicy
+typealias DiagnosticRunMetrics = com.robotkinematicslab.mobile.diagnostics.metrics.DiagnosticRunMetrics
+typealias DiagnosticRunMetricsCalculator = com.robotkinematicslab.mobile.diagnostics.metrics.DiagnosticRunMetricsCalculator
+typealias DiagnosticProgressClass = com.robotkinematicslab.mobile.diagnostics.metrics.DiagnosticProgressClass
+typealias DiagnosticSeedDistanceBucket = com.robotkinematicslab.mobile.diagnostics.metrics.DiagnosticSeedDistanceBucket
+typealias DiagnosticFallbackSummaryBuilder = com.robotkinematicslab.mobile.diagnostics.benchmark.analysis.DiagnosticFallbackSummaryBuilder
+typealias DiagnosticStatsAggregator = com.robotkinematicslab.mobile.diagnostics.benchmark.analysis.DiagnosticStatsAggregator
+typealias DiagnosticVerdictPolicy = com.robotkinematicslab.mobile.diagnostics.benchmark.analysis.DiagnosticVerdictPolicy
+
+typealias DiagnosticTopologyAuditCode = com.robotkinematicslab.mobile.diagnostics.benchmark.validation.DiagnosticTopologyAuditCode
+typealias DiagnosticTopologyAuditIssue = com.robotkinematicslab.mobile.diagnostics.benchmark.validation.DiagnosticTopologyAuditIssue
+typealias DiagnosticTopologyAuditMetrics = com.robotkinematicslab.mobile.diagnostics.benchmark.validation.DiagnosticTopologyAuditMetrics
+typealias DiagnosticTopologyAuditRecord = com.robotkinematicslab.mobile.diagnostics.benchmark.validation.DiagnosticTopologyAuditRecord
+typealias DiagnosticTopologyAuditResult = com.robotkinematicslab.mobile.diagnostics.benchmark.validation.DiagnosticTopologyAuditResult
+typealias DiagnosticTopologyAuditSeverity = com.robotkinematicslab.mobile.diagnostics.benchmark.validation.DiagnosticTopologyAuditSeverity
+typealias DiagnosticTopologyAuditor = com.robotkinematicslab.mobile.diagnostics.benchmark.validation.DiagnosticTopologyAuditor
+
+typealias DiagnosticCaseResultCsvWriter = com.robotkinematicslab.mobile.diagnostics.benchmark.export.DiagnosticCaseResultCsvWriter
+typealias DiagnosticRunHistoryCsvWriter = com.robotkinematicslab.mobile.diagnostics.benchmark.export.DiagnosticRunHistoryCsvWriter
+
+typealias DiagnosticCaseResult = com.robotkinematicslab.mobile.diagnostics.benchmark.result.DiagnosticCaseResult
+typealias DiagnosticExpectedClass = com.robotkinematicslab.mobile.diagnostics.benchmark.result.DiagnosticExpectedClass
+typealias DiagnosticRunKind = com.robotkinematicslab.mobile.diagnostics.benchmark.result.DiagnosticRunKind
+typealias DiagnosticRunResult = com.robotkinematicslab.mobile.diagnostics.benchmark.result.DiagnosticRunResult
+typealias DiagnosticVerdict = com.robotkinematicslab.mobile.diagnostics.benchmark.result.DiagnosticVerdict
+
+typealias DiagnosticDatasetAcceptanceSummary = com.robotkinematicslab.mobile.diagnostics.benchmark.report.DiagnosticDatasetAcceptanceSummary
+typealias DiagnosticDetailCodeDistributionItem = com.robotkinematicslab.mobile.diagnostics.benchmark.report.DiagnosticDetailCodeDistributionItem
+typealias DiagnosticExtremeRunSummary = com.robotkinematicslab.mobile.diagnostics.benchmark.report.DiagnosticExtremeRunSummary
+typealias DiagnosticFallbackSummary = com.robotkinematicslab.mobile.diagnostics.benchmark.report.DiagnosticFallbackSummary
+typealias DiagnosticPerCaseAggregate = com.robotkinematicslab.mobile.diagnostics.benchmark.report.DiagnosticPerCaseAggregate
+typealias DiagnosticStatusDistributionItem = com.robotkinematicslab.mobile.diagnostics.benchmark.report.DiagnosticStatusDistributionItem
+typealias DiagnosticSummary = com.robotkinematicslab.mobile.diagnostics.benchmark.report.DiagnosticSummary
+typealias DiagnosticTransitionAggregate = com.robotkinematicslab.mobile.diagnostics.benchmark.report.DiagnosticTransitionAggregate
+typealias Layer1DiagnosticReport = com.robotkinematicslab.mobile.diagnostics.benchmark.report.Layer1DiagnosticReport
+typealias LinkCountAggregate = com.robotkinematicslab.mobile.diagnostics.benchmark.report.LinkCountAggregate
+typealias SeedAggregate = com.robotkinematicslab.mobile.diagnostics.benchmark.report.SeedAggregate
+typealias SeedComparisonSummary = com.robotkinematicslab.mobile.diagnostics.benchmark.report.SeedComparisonSummary
+typealias TopologyAggregate = com.robotkinematicslab.mobile.diagnostics.benchmark.report.TopologyAggregate

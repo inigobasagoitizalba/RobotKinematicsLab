@@ -1,0 +1,20 @@
+package com.robotkinematicslab.mobile.diagnostics.benchmark.report
+
+import com.robotkinematicslab.mobile.diagnostics.benchmark.config.DiagnosticJointMode
+
+data class TopologyAggregate(
+    val jointMode: DiagnosticJointMode,
+    val runCount: Int,
+    val strictAcceptedCount: Int,
+    val nearSolvedCount: Int,
+    val closeMissCount: Int,
+    val farFailureCount: Int,
+    val strictAcceptanceRate: Double,
+    val averageFinalError: Double,
+    val maxFinalError: Double,
+    val averageIterations: Double,
+    val averageImprovementRatio: Double,
+    val averageJointLimitPressureRatio: Double,
+    val runsWithNearJointLimit: Int,
+    val fullJointLimitPressureCount: Int
+)

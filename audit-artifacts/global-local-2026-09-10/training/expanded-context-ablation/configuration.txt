@@ -1,0 +1,9 @@
+dataset=./audit-artifacts/global-local-2026-09-10/datasets/classification-research-grid-99000.csv
+seeds=2604,2605,2606
+rows=99000
+split=ROBOT_HELD_OUT
+model=COMPACT_MLP
+hidden_units=32
+epochs=40
+batch=512
+workers=2

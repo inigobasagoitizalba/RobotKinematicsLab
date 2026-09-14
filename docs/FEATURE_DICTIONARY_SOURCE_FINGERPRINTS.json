@@ -1,0 +1,10 @@
+{
+  "ml/data/ScientificDatasetTrainingReader.kt": "d4837a4b4d4b8fd3b5f95b3773c5c3dac94437064ecf40459bce60a27dced63c",
+  "ml/data/ExpandedContextFeatureCalculator.kt": "21105748e4fa7b6f97150656935a6eb5298ce2c33a74bd1743f21a6fdff0805e",
+  "ml/data/ResearchContextFeatureCalculator.kt": "376c920e3c562d60f05e42964a0c8c87359c3b64992f49d62d23054fe018a0a9",
+  "ml/ik/OneMicronIkFeatureEncoder.kt": "0d9e474aa257219444c08a066d92646edb853d01b5a7ddec163b8d964d1edb54",
+  "diagnostics/metrics/DiagnosticDerivedMetricsCalculator.kt": "ccc457323b794675fd161b1c4cf0032f79fb2502523c5a8fdc8e350b71004e4a",
+  "diagnostics/metrics/DiagnosticRunMetricsCalculator.kt": "78e13b8fb3a4474d1b25d87ab3ed177463f2978e784b125a3c4fa450d5cbefea",
+  "diagnostics/metrics/DiagnosticMetricPolicy.kt": "f683332cbc7fcd753f97764048c999c2ddd4d0aad96b0a00fed11474102086d7",
+  "solver/ik/InverseKinematicsSolver.kt": "498198aeafc3ccb7b2b25daec5ff0c68afa86204c7f477a22ff5277d20c144c0"
+}

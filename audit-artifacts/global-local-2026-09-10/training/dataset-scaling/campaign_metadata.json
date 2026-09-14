@@ -1,0 +1,53 @@
+{
+  "source_dataset": "./audit-artifacts/global-local-2026-09-10/datasets/context-ablation-nested-10000.csv",
+  "base_dataset": "./audit-artifacts/global-local-2026-09-10/datasets/context-ablation-base-1000.csv",
+  "source_rows": 10000,
+  "dataset_sizes": [
+    1000,
+    2000,
+    3000,
+    4000,
+    5000,
+    6000,
+    7000,
+    8000,
+    9000,
+    10000
+  ],
+  "parallel_workers": 2,
+  "duration_seconds": 438.84423304203665,
+  "full_training_wall_seconds": 438.84423304203665,
+  "last_invocation_wall_seconds": 438.84423304203665,
+  "trained_experiments_last_invocation": 20,
+  "reused_experiments_last_invocation": 0,
+  "dataset_creation": {
+    "status": "generated",
+    "wall_seconds": 24.81876758299768,
+    "csv_bytes": 11842919
+  },
+  "dataset_generation_last_invocation": {
+    "status": "generated",
+    "wall_seconds": 24.81876758299768,
+    "csv_bytes": 11842919
+  },
+  "nested_selection": "Ten deterministic 1k batches; each batch contains 250 rows from each of the same four robots. The original pilot is preserved as batch 1.",
+  "experiments": 20,
+  "model_fits": 1920,
+  "resource_measurements": {
+    "per_fit": [
+      "fit_seconds_mean",
+      "inference_seconds_mean"
+    ],
+    "per_experiment": [
+      "wall_seconds",
+      "process_cpu_seconds",
+      "data_preparation_seconds",
+      "training_wall_seconds",
+      "peak_rss_megabytes"
+    ],
+    "dataset": [
+      "generation wall_seconds",
+      "csv_bytes"
+    ]
+  }
+}

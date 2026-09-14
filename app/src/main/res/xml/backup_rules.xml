@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+   Sample backup rules file; uncomment and customize as necessary.
+   See https://developer.android.com/guide/topics/data/autobackup
+   for details.
+   Note: This file is ignored for devices older than API 31
+   See https://developer.android.com/about/versions/12/backup-restore
+-->
+<full-backup-content>
+    <!--
+      Scientific workspaces are intentionally excluded because an automatic restore could combine
+      a project index with only part of its evidence. A portable, integrity-checked export flow is
+      still required before production. The external domain is rooted at getExternalFilesDir(null),
+      so the Documents segment is required.
+    -->
+    <exclude domain="file" path="RobotKinematicsLab" />
+    <exclude domain="external" path="Documents/RobotKinematicsLab" />
+</full-backup-content>

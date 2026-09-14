@@ -1,0 +1,33 @@
+# Android and Gradle outputs
+.gradle/
+.kotlin/
+**/build/
+*.apk
+*.aab
+*.ap_
+*.dex
+
+# Local SDK and IDE state
+local.properties
+.idea/
+*.iml
+.DS_Store
+
+# Native and Python tooling
+.externalNativeBuild/
+.cxx/
+__pycache__/
+*.py[cod]
+.venv/
+.venv-*/
+
+# Local captures and temporary files
+captures/
+*.log
+*.tmp
+*.bak
+*~
+
+# Raw corpora above GitHub's individual-file limit. Compressed APK datasets remain tracked.
+/audit-artifacts/global-local-2026-09-10/datasets/one-micron-reachable-100000.csv
+/audit-artifacts/global-local-2026-09-10/datasets/classification-research-grid-99000.csv

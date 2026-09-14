@@ -1,0 +1,243 @@
+{
+  "dataset": "./audit-artifacts/global-local-2026-09-10/datasets/context-ablation-nested-10000.csv",
+  "source_row_count": 10000,
+  "row_count": 6000,
+  "selection": "nested deterministic prefixes of complete 1k batches; every batch contains 250 rows per robot and preserves generated target proportions",
+  "class_counts": {
+    "ACCEPTED": 1611,
+    "REJECTED": 3321,
+    "UNCERTAIN": 1068
+  },
+  "target_class_counts": {
+    "FK_PROVEN_REACHABLE": 3912,
+    "GUARANTEED_UNREACHABLE": 2088
+  },
+  "non_constant_feature_counts": {
+    "baseline": 39,
+    "context_10": 46,
+    "context_20": 56,
+    "context_22": 58
+  },
+  "robot_counts": {
+    "preset-02-revolute": 1500,
+    "preset-03-revolute": 1500,
+    "preset-04-revolute": 1500,
+    "preset-04-prismatic": 1500
+  },
+  "robot_class_counts": {
+    "preset-02-revolute": {
+      "ACCEPTED": 707,
+      "REJECTED": 789,
+      "UNCERTAIN": 4
+    },
+    "preset-03-revolute": {
+      "ACCEPTED": 422,
+      "REJECTED": 994,
+      "UNCERTAIN": 84
+    },
+    "preset-04-prismatic": {
+      "REJECTED": 520,
+      "UNCERTAIN": 980
+    },
+    "preset-04-revolute": {
+      "REJECTED": 1018,
+      "ACCEPTED": 482
+    }
+  },
+  "seeds": [
+    101,
+    102,
+    103,
+    104,
+    105,
+    106,
+    107,
+    108,
+    109,
+    110,
+    111,
+    112
+  ],
+  "split": "stable SHA-256 70/15/15 assignment by robot-target-seed fingerprint",
+  "wall_seconds": 32.30449583299924,
+  "process_cpu_seconds": 32.071324999999995,
+  "peak_rss_bytes": 312508416,
+  "data_preparation_seconds": 0.3931575829628855,
+  "training_wall_seconds": 31.62576716701733,
+  "feature_contract": [
+    {
+      "stage": "baseline",
+      "feature_count": 108,
+      "label": "Baseline"
+    },
+    {
+      "stage": "context_10",
+      "feature_count": 118,
+      "label": "+10 difficulty/reach"
+    },
+    {
+      "stage": "context_20",
+      "feature_count": 128,
+      "label": "+20 geometry/state"
+    },
+    {
+      "stage": "context_22",
+      "feature_count": 130,
+      "label": "+22 full context"
+    }
+  ],
+  "extra_feature_order": [
+    "initial_cartesian_error",
+    "initial_error_available",
+    "seed_min_normalized_limit_margin",
+    "seed_margin_available",
+    "seed_log_condition_number",
+    "seed_condition_available",
+    "target_radius",
+    "conservative_reach_bound",
+    "target_reach_ratio",
+    "prismatic_joint_fraction",
+    "revolute_joint_fraction",
+    "mean_link_extent",
+    "link_extent_standard_deviation",
+    "mean_joint_span",
+    "minimum_joint_span",
+    "normalized_target_x",
+    "normalized_target_y",
+    "normalized_target_z",
+    "seed_home_offset_rms",
+    "seed_home_offset_mean_absolute",
+    "seed_home_offset_max_absolute",
+    "workspace_boundary_proximity"
+  ],
+  "summary": [
+    {
+      "model": "Logistic regression",
+      "stage": "baseline",
+      "stage_label": "Baseline",
+      "feature_count": 108,
+      "macro_f1_mean": 0.6270408861338329,
+      "macro_f1_std": 0.013031325402081873,
+      "macro_f1_ci95_half_width": 0.007373166444213786,
+      "balanced_accuracy_mean": 0.6817851808494516,
+      "reachable_macro_f1_mean": 0.7193985368985745,
+      "reachable_macro_f1_ci95_half_width": 0.009463046405137166,
+      "reachable_test_rows_mean": 580.5833333333334,
+      "log_loss_mean": 0.7483561161112521,
+      "fit_seconds_mean": 0.023846666658452403,
+      "inference_seconds_mean": 0.0003215209095894049
+    },
+    {
+      "model": "Logistic regression",
+      "stage": "context_10",
+      "stage_label": "+10 difficulty/reach",
+      "feature_count": 118,
+      "macro_f1_mean": 0.8074799804404061,
+      "macro_f1_std": 0.011332346325589302,
+      "macro_f1_ci95_half_width": 0.006411878537596469,
+      "balanced_accuracy_mean": 0.820593535327219,
+      "reachable_macro_f1_mean": 0.7076948754126691,
+      "reachable_macro_f1_ci95_half_width": 0.007746839738351611,
+      "reachable_test_rows_mean": 580.5833333333334,
+      "log_loss_mean": 0.4533941931205439,
+      "fit_seconds_mean": 0.07553853825568997,
+      "inference_seconds_mean": 0.0003289444139227271
+    },
+    {
+      "model": "Logistic regression",
+      "stage": "context_20",
+      "stage_label": "+20 geometry/state",
+      "feature_count": 128,
+      "macro_f1_mean": 0.8113372805797302,
+      "macro_f1_std": 0.012346879416480118,
+      "macro_f1_ci95_half_width": 0.006985904671661512,
+      "balanced_accuracy_mean": 0.8230222707718419,
+      "reachable_macro_f1_mean": 0.724609048708444,
+      "reachable_macro_f1_ci95_half_width": 0.009260514511490075,
+      "reachable_test_rows_mean": 580.5833333333334,
+      "log_loss_mean": 0.4423058331052234,
+      "fit_seconds_mean": 0.08954734383830025,
+      "inference_seconds_mean": 0.00034176017409966636
+    },
+    {
+      "model": "Logistic regression",
+      "stage": "context_22",
+      "stage_label": "+22 full context",
+      "feature_count": 130,
+      "macro_f1_mean": 0.8519220254453592,
+      "macro_f1_std": 0.012487480517417925,
+      "macro_f1_ci95_half_width": 0.007065457233466817,
+      "balanced_accuracy_mean": 0.8677537185596581,
+      "reachable_macro_f1_mean": 0.7618145790886054,
+      "reachable_macro_f1_ci95_half_width": 0.010084757564283654,
+      "reachable_test_rows_mean": 580.5833333333334,
+      "log_loss_mean": 0.3423199423038286,
+      "fit_seconds_mean": 0.09318745842028875,
+      "inference_seconds_mean": 0.00036175708131243783
+    },
+    {
+      "model": "MLP-24",
+      "stage": "baseline",
+      "stage_label": "Baseline",
+      "feature_count": 108,
+      "macro_f1_mean": 0.849903620480119,
+      "macro_f1_std": 0.012907595672069132,
+      "macro_f1_ci95_half_width": 0.007303159759142763,
+      "balanced_accuracy_mean": 0.8673607083307867,
+      "reachable_macro_f1_mean": 0.7990702007495356,
+      "reachable_macro_f1_ci95_half_width": 0.009392600451544428,
+      "reachable_test_rows_mean": 580.5833333333334,
+      "log_loss_mean": 0.3801226576242511,
+      "fit_seconds_mean": 0.5252645555883646,
+      "inference_seconds_mean": 0.0003990972424314047
+    },
+    {
+      "model": "MLP-24",
+      "stage": "context_10",
+      "stage_label": "+10 difficulty/reach",
+      "feature_count": 118,
+      "macro_f1_mean": 0.8908301795195802,
+      "macro_f1_std": 0.014252532065703018,
+      "macro_f1_ci95_half_width": 0.008064129160272063,
+      "balanced_accuracy_mean": 0.9018276334504994,
+      "reachable_macro_f1_mean": 0.8362332301658943,
+      "reachable_macro_f1_ci95_half_width": 0.01275138970695411,
+      "reachable_test_rows_mean": 580.5833333333334,
+      "log_loss_mean": 0.26036773226662946,
+      "fit_seconds_mean": 0.6526243924211789,
+      "inference_seconds_mean": 0.00040896165592130274
+    },
+    {
+      "model": "MLP-24",
+      "stage": "context_20",
+      "stage_label": "+20 geometry/state",
+      "feature_count": 128,
+      "macro_f1_mean": 0.8921814265437783,
+      "macro_f1_std": 0.017845858379675828,
+      "macro_f1_ci95_half_width": 0.010097244916637263,
+      "balanced_accuracy_mean": 0.9005634245691247,
+      "reachable_macro_f1_mean": 0.8411289034838682,
+      "reachable_macro_f1_ci95_half_width": 0.015794760779132336,
+      "reachable_test_rows_mean": 580.5833333333334,
+      "log_loss_mean": 0.26929062571768475,
+      "fit_seconds_mean": 0.53909844783387,
+      "inference_seconds_mean": 0.00041603467252571136
+    },
+    {
+      "model": "MLP-24",
+      "stage": "context_22",
+      "stage_label": "+22 full context",
+      "feature_count": 130,
+      "macro_f1_mean": 0.8896928902874538,
+      "macro_f1_std": 0.011455366663827751,
+      "macro_f1_ci95_half_width": 0.006481483846486282,
+      "balanced_accuracy_mean": 0.8989340140529345,
+      "reachable_macro_f1_mean": 0.8397653819122678,
+      "reachable_macro_f1_ci95_half_width": 0.008262620636188303,
+      "reachable_test_rows_mean": 580.5833333333334,
+      "log_loss_mean": 0.26713302986928755,
+      "fit_seconds_mean": 0.5817831666742374,
+      "inference_seconds_mean": 0.00042997925872138393
+    }
+  ]
+}

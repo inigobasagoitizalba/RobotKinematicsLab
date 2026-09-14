@@ -1,0 +1,243 @@
+{
+  "dataset": "./audit-artifacts/global-local-2026-09-10/datasets/context-ablation-nested-10000.csv",
+  "source_row_count": 10000,
+  "row_count": 8000,
+  "selection": "nested deterministic prefixes of complete 1k batches; every batch contains 250 rows per robot and preserves generated target proportions",
+  "class_counts": {
+    "ACCEPTED": 2150,
+    "REJECTED": 4429,
+    "UNCERTAIN": 1421
+  },
+  "target_class_counts": {
+    "FK_PROVEN_REACHABLE": 5216,
+    "GUARANTEED_UNREACHABLE": 2784
+  },
+  "non_constant_feature_counts": {
+    "baseline": 39,
+    "context_10": 46,
+    "context_20": 56,
+    "context_22": 58
+  },
+  "robot_counts": {
+    "preset-02-revolute": 2000,
+    "preset-03-revolute": 2000,
+    "preset-04-revolute": 2000,
+    "preset-04-prismatic": 2000
+  },
+  "robot_class_counts": {
+    "preset-02-revolute": {
+      "ACCEPTED": 934,
+      "REJECTED": 1059,
+      "UNCERTAIN": 7
+    },
+    "preset-03-revolute": {
+      "ACCEPTED": 563,
+      "REJECTED": 1329,
+      "UNCERTAIN": 108
+    },
+    "preset-04-prismatic": {
+      "REJECTED": 694,
+      "UNCERTAIN": 1306
+    },
+    "preset-04-revolute": {
+      "REJECTED": 1347,
+      "ACCEPTED": 653
+    }
+  },
+  "seeds": [
+    101,
+    102,
+    103,
+    104,
+    105,
+    106,
+    107,
+    108,
+    109,
+    110,
+    111,
+    112
+  ],
+  "split": "stable SHA-256 70/15/15 assignment by robot-target-seed fingerprint",
+  "wall_seconds": 40.86348287499277,
+  "process_cpu_seconds": 40.641857,
+  "peak_rss_bytes": 326631424,
+  "data_preparation_seconds": 0.41308858402771875,
+  "training_wall_seconds": 40.16024383396143,
+  "feature_contract": [
+    {
+      "stage": "baseline",
+      "feature_count": 108,
+      "label": "Baseline"
+    },
+    {
+      "stage": "context_10",
+      "feature_count": 118,
+      "label": "+10 difficulty/reach"
+    },
+    {
+      "stage": "context_20",
+      "feature_count": 128,
+      "label": "+20 geometry/state"
+    },
+    {
+      "stage": "context_22",
+      "feature_count": 130,
+      "label": "+22 full context"
+    }
+  ],
+  "extra_feature_order": [
+    "initial_cartesian_error",
+    "initial_error_available",
+    "seed_min_normalized_limit_margin",
+    "seed_margin_available",
+    "seed_log_condition_number",
+    "seed_condition_available",
+    "target_radius",
+    "conservative_reach_bound",
+    "target_reach_ratio",
+    "prismatic_joint_fraction",
+    "revolute_joint_fraction",
+    "mean_link_extent",
+    "link_extent_standard_deviation",
+    "mean_joint_span",
+    "minimum_joint_span",
+    "normalized_target_x",
+    "normalized_target_y",
+    "normalized_target_z",
+    "seed_home_offset_rms",
+    "seed_home_offset_mean_absolute",
+    "seed_home_offset_max_absolute",
+    "workspace_boundary_proximity"
+  ],
+  "summary": [
+    {
+      "model": "Logistic regression",
+      "stage": "baseline",
+      "stage_label": "Baseline",
+      "feature_count": 108,
+      "macro_f1_mean": 0.6195468465215405,
+      "macro_f1_std": 0.014630861924744045,
+      "macro_f1_ci95_half_width": 0.008278189429312677,
+      "balanced_accuracy_mean": 0.6787323146485248,
+      "reachable_macro_f1_mean": 0.7113709478738679,
+      "reachable_macro_f1_ci95_half_width": 0.009419916592072922,
+      "reachable_test_rows_mean": 782.0,
+      "log_loss_mean": 0.7531427081031978,
+      "fit_seconds_mean": 0.025845979083290633,
+      "inference_seconds_mean": 0.00037338541975865763
+    },
+    {
+      "model": "Logistic regression",
+      "stage": "context_10",
+      "stage_label": "+10 difficulty/reach",
+      "feature_count": 118,
+      "macro_f1_mean": 0.8059712767901908,
+      "macro_f1_std": 0.011238990931501536,
+      "macro_f1_ci95_half_width": 0.006359057750927731,
+      "balanced_accuracy_mean": 0.818629661429331,
+      "reachable_macro_f1_mean": 0.7051476291176404,
+      "reachable_macro_f1_ci95_half_width": 0.0065868003720499155,
+      "reachable_test_rows_mean": 782.0,
+      "log_loss_mean": 0.45434871465181387,
+      "fit_seconds_mean": 0.11410957316305333,
+      "inference_seconds_mean": 0.0003929585072910413
+    },
+    {
+      "model": "Logistic regression",
+      "stage": "context_20",
+      "stage_label": "+20 geometry/state",
+      "feature_count": 128,
+      "macro_f1_mean": 0.8081032061539304,
+      "macro_f1_std": 0.012571920524416653,
+      "macro_f1_ci95_half_width": 0.007113233665022485,
+      "balanced_accuracy_mean": 0.8189815559186812,
+      "reachable_macro_f1_mean": 0.7180366209004919,
+      "reachable_macro_f1_ci95_half_width": 0.009019015025972648,
+      "reachable_test_rows_mean": 782.0,
+      "log_loss_mean": 0.4440677863449329,
+      "fit_seconds_mean": 0.13079919108228447,
+      "inference_seconds_mean": 0.00040425683740371216
+    },
+    {
+      "model": "Logistic regression",
+      "stage": "context_22",
+      "stage_label": "+22 full context",
+      "feature_count": 130,
+      "macro_f1_mean": 0.8493188053556723,
+      "macro_f1_std": 0.011441562780698357,
+      "macro_f1_ci95_half_width": 0.006473673564358476,
+      "balanced_accuracy_mean": 0.866245993044063,
+      "reachable_macro_f1_mean": 0.7552078051039467,
+      "reachable_macro_f1_ci95_half_width": 0.009449405594412626,
+      "reachable_test_rows_mean": 782.0,
+      "log_loss_mean": 0.33828739633973665,
+      "fit_seconds_mean": 0.13625015283954175,
+      "inference_seconds_mean": 0.0004511182535983001
+    },
+    {
+      "model": "MLP-24",
+      "stage": "baseline",
+      "stage_label": "Baseline",
+      "feature_count": 108,
+      "macro_f1_mean": 0.8520845287059382,
+      "macro_f1_std": 0.01213411206779972,
+      "macro_f1_ci95_half_width": 0.00686552021134683,
+      "balanced_accuracy_mean": 0.8679748692277736,
+      "reachable_macro_f1_mean": 0.7999857189106289,
+      "reachable_macro_f1_ci95_half_width": 0.008176519453032029,
+      "reachable_test_rows_mean": 782.0,
+      "log_loss_mean": 0.3629047071059703,
+      "fit_seconds_mean": 0.6425698368257144,
+      "inference_seconds_mean": 0.0005043959196579332
+    },
+    {
+      "model": "MLP-24",
+      "stage": "context_10",
+      "stage_label": "+10 difficulty/reach",
+      "feature_count": 118,
+      "macro_f1_mean": 0.8983734610524476,
+      "macro_f1_std": 0.013588299397406538,
+      "macro_f1_ci95_half_width": 0.007688304148623456,
+      "balanced_accuracy_mean": 0.9061968666567873,
+      "reachable_macro_f1_mean": 0.8482961449695545,
+      "reachable_macro_f1_ci95_half_width": 0.009821355388423662,
+      "reachable_test_rows_mean": 782.0,
+      "log_loss_mean": 0.23585040027617432,
+      "fit_seconds_mean": 0.7582106736663263,
+      "inference_seconds_mean": 0.000530059085576795
+    },
+    {
+      "model": "MLP-24",
+      "stage": "context_20",
+      "stage_label": "+20 geometry/state",
+      "feature_count": 128,
+      "macro_f1_mean": 0.9000966500356036,
+      "macro_f1_std": 0.006656203194797891,
+      "macro_f1_ci95_half_width": 0.003766101492171461,
+      "balanced_accuracy_mean": 0.908648594695591,
+      "reachable_macro_f1_mean": 0.852311565199785,
+      "reachable_macro_f1_ci95_half_width": 0.005500973261575616,
+      "reachable_test_rows_mean": 782.0,
+      "log_loss_mean": 0.2427399392779361,
+      "fit_seconds_mean": 0.746408392325975,
+      "inference_seconds_mean": 0.0005044930876465514
+    },
+    {
+      "model": "MLP-24",
+      "stage": "context_22",
+      "stage_label": "+22 full context",
+      "feature_count": 130,
+      "macro_f1_mean": 0.896110942538141,
+      "macro_f1_std": 0.015215787659653108,
+      "macro_f1_ci95_half_width": 0.00860914231920825,
+      "balanced_accuracy_mean": 0.9047364796507537,
+      "reachable_macro_f1_mean": 0.848390416582474,
+      "reachable_macro_f1_ci95_half_width": 0.011433268296973876,
+      "reachable_test_rows_mean": 782.0,
+      "log_loss_mean": 0.2514160968794789,
+      "fit_seconds_mean": 0.7262865659868112,
+      "inference_seconds_mean": 0.0005281040842722481
+    }
+  ]
+}

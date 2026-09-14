@@ -1,0 +1,112 @@
+Robot Kinematics Lab · Numerical Safety Ablation
+Protocol: rkl-numerical-safety-ablation-v1
+Created: 1789053469304
+Seed: 2606
+Link counts: 3, 5, 10
+Joint modes: AUTO, REVOLUTE_ONLY, PRISMATIC_ONLY, MIXED
+Valid trials per topology: 96
+Tolerance: 1.00000000000e-06 m
+Reference branch included: true
+Injected faults included: true
+
+VALID · GUARDED
+Trials: 1152
+Certified successes: 816 (70.833%)
+Success Wilson 95% CI: 68.143% to 73.385%
+Non-finite events: 0
+Joint-limit violations: 0
+Unsafe success claims: 0
+Contained exceptions: 0
+Potentially contaminating candidates: 0
+Finite residual coverage: 1152/1152
+Residual sum: 292.511260648 m
+Residual median: 5.95338398803e-07 m
+Residual p95: 1.35726780896 m
+Mean iterations: 92.5520833333
+Mean duration: 0.358778587674 ms
+
+VALID · UNGUARDED REFERENCE
+Trials: 1152
+Certified successes: 288 (25.000%)
+Success Wilson 95% CI: 22.585% to 27.581%
+Non-finite events: 0
+Joint-limit violations: 864
+Unsafe success claims: 802
+Contained exceptions: 0
+Potentially contaminating candidates: 864
+Finite residual coverage: 1152/1152
+Residual sum: 70.7973689636 m
+Residual median: 1.76585156290e-07 m
+Residual p95: 0.745937693837 m
+Mean iterations: 51.1171875000
+Mean duration: 0.0304204748264 ms
+
+VALID PAIRED IMPACT
+Success delta: +45.833 percentage points
+Contamination-candidate reduction: +75.000 percentage points
+Non-finite events prevented: 0
+Limit violations prevented: 864
+Unsafe successes prevented: 802
+Paired finite in-limit residual coverage: 288/1152
+Paired raw residual sum: 9.00421496327e-05 m
+Paired guarded residual sum: 0.000141610291384 m
+Paired residual reduction: -57.271%
+Mean time cost: +1079.398%
+Guarded backtracking retries: 182
+Guarded singularity interventions: 313
+
+Timing note: short-run duration is indicative device telemetry, not a controlled performance benchmark.
+
+FAULTS · GUARDED
+Trials: 48
+Certified successes: 0 (0.000%)
+Success Wilson 95% CI: 0.000% to 7.410%
+Non-finite events: 0
+Joint-limit violations: 0
+Unsafe success claims: 0
+Contained exceptions: 0
+Potentially contaminating candidates: 0
+Finite residual coverage: 12/48
+Residual sum: 0.00000000000 m
+Residual median: 0.00000000000 m
+Residual p95: 0.00000000000 m
+Mean iterations: 0.250000000000
+Mean duration: 0.00775962500000 ms
+
+FAULTS · UNGUARDED REFERENCE
+Trials: 48
+Certified successes: 0 (0.000%)
+Success Wilson 95% CI: 0.000% to 7.410%
+Non-finite events: 48
+Joint-limit violations: 0
+Unsafe success claims: 0
+Contained exceptions: 0
+Potentially contaminating candidates: 48
+Finite residual coverage: 0/48
+Residual sum: 0.00000000000 m
+Residual median: NaN m
+Residual p95: NaN m
+Mean iterations: 800.000000000
+Mean duration: 0.758808166667 ms
+
+FAULT-CONTAINMENT IMPACT
+Success delta: +0.000 percentage points
+Contamination-candidate reduction: +100.000 percentage points
+Non-finite events prevented: 48
+Limit violations prevented: 0
+Unsafe successes prevented: 0
+Paired finite in-limit residual coverage: 0/48
+Paired raw residual sum: 0.00000000000 m
+Paired guarded residual sum: 0.00000000000 m
+Paired residual reduction: N/A
+Mean time cost: -98.977%
+Guarded backtracking retries: 0
+Guarded singularity interventions: 0
+
+Timing note: short-run duration is indicative device telemetry, not a controlled performance benchmark.
+
+INTERPRETATION
+On valid matched inputs, guarded success was 70.83% versus 25.00% for the isolated unguarded reference (+45.83 percentage points). The paired admissible-residual comparison covers 288/1152 trials. In injected-fault probes, 48 unguarded non-finite events were contained by the guarded path. Aggregate residual is an error burden across commands, not measured physical trajectory drift; injected faults are never mixed into the natural-rate claim.
+
+SCIENTIFIC BOUNDARY
+The unguarded branch is an isolated negative control, not an alternative production solver. It preserves the DH convention, fixed DLS damping, numerical-difference step and mixed-joint scaling, while omitting validation, adaptive damping, clipping, step limits, backtracking, stagnation checks and final certification. Aggregate residual is a sum across commands, not physical drift. Injected-fault results are reported separately from valid-input incidence.

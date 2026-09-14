@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.RobotKinematicsLab" parent="android:Theme.Material.Light.NoActionBar">
+        <!-- Matches the Compose launch surface so a cold start never flashes white. -->
+        <item name="android:windowBackground">@color/launch_window_background</item>
+    </style>
+</resources>

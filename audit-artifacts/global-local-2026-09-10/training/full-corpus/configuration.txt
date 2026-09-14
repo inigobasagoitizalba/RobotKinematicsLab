@@ -1,0 +1,15 @@
+dataset=./audit-artifacts/global-local-2026-09-10/datasets/classification-research-grid-99000.csv
+rows_limit=99000
+seeds=2604,2605,2606,2607,2608
+model=COMPACT_MLP
+resource_mode=BALANCED
+split=ROBOT_HELD_OUT
+epochs=40
+batch_size=512
+hidden_units=24
+learning_rate=0.003
+l2=1.0E-4
+patience=8
+compare_profiles=true
+single_profile=CONTEXT_EXPANDED
+workers=2

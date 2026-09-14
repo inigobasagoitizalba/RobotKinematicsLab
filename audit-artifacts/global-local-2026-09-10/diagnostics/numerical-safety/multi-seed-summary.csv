@@ -1,0 +1,4 @@
+protocol,seed,validTrials,guardedCertified,guardedSuccessRate,unguardedCertified,unguardedSuccessRate,successDeltaPercentagePoints,pairedAdmissibleCount,pairedResidualReductionPercent,rawLimitViolationsPrevented,unsafeSuccessesPrevented,faultNonFiniteEventsPrevented,meanTimeCostPercent
+rkl-numerical-safety-ablation-v1,2604,1152,796,0.690972222222,290,0.251736111111,43.9236111111,290,-55.8545162369,862,793,48,663.186160413
+rkl-numerical-safety-ablation-v1,2605,1152,834,0.723958333333,294,0.255208333333,46.8750000000,295,88.9075950966,857,765,48,832.782158699
+rkl-numerical-safety-ablation-v1,2606,1152,816,0.708333333333,288,0.250000000000,45.8333333333,288,-57.2711135410,864,802,48,1079.39838126
